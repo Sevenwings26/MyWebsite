@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../assets/css/Hero.css'
+import { FaCalendarDays, FaClock } from "react-icons/fa6";
 
 const DateTime = ({ dateTime }) => {
   const [date, setDate] = useState('');
@@ -28,9 +29,10 @@ const DateTime = ({ dateTime }) => {
 
   return (
     <div className={dateTime}>
-      <span className="text-black bg-orange-900 p-1 text-xs md:text-2xl mb-4">{date}</span>, <br />
-      <span className="time text-orange-900 text-bold mt-2 text-xs md:text-2xl animate-pulse">{time} -</span>  
-      (<span className="timezone md:text-sm text-white bold mt-2">{timeZone}</span>)
+      <span className="w-24 md:w-44 flex flex-row justify-between items-center text-white p-1 text-xs md:text-2xl"> <FaCalendarDays /> {date}</span>, <br />
+      <span className="w-28 md:w-56 flex flex-row justify-between items-center time text-white text-xs md:text-2xl animate-pulse"><FaClock /> {time} - {timeZone} 
+      </span>  
+      (<span className="timezone md:text-sm text-white bold mt-2"></span>)
     </div>
   );
 };
